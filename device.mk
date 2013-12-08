@@ -23,6 +23,7 @@ PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.rc:root/init.hammerhead.rc \
     device/lge/hammerhead/init.hammerhead.usb.rc:root/init.hammerhead.usb.rc \
     device/lge/hammerhead/fstab.hammerhead:root/fstab.hammerhead \
+    device/lge/hammerhead/modules/kcontrol_gpu_msm.ko:system/lib/modules/kcontrol_gpu_msm.ko \
     device/lge/hammerhead/ueventd.hammerhead.rc:root/ueventd.hammerhead.rc
 
 # Input device files for hammerhead

@@ -1,12 +1,10 @@
-#!/system/bin/sh
+#!/sbin/sh
+#
 
-# Make sure that mpdecision and thermal-engine are inactive from the dirty flashers!
-mount -o rw,remount /system;
-[ -f /system/bin/mpdecision.bak ] || mv /system/bin/mpdecision /system/bin/mpdecision.bak
-[ -f /system/bin/thermal-engine-hh-bak ] || mv /system/bin/thermal-engine-hh /system/bin/thermal-engine-hh-bak
-if [ ! -e /system/etc/init.d ]; then
-mkdir /system/etc/init.d
-  chown -R root.root /system/etc/init.d;
-  chmod -R 755 /system/etc/init.d;
-fi;
-mount -o ro,remount /system;
+#remove the binaries as they are no longer needed. (kernel handled)
+if [ -e /system/bin/mpdecision ] ; then
+	busybox mv /system/bin/mpdecision /system/bin/mpdecision_bck
+fi
+if [ -e /system/bin/thermal-engine-hh ] ; then
+	busybox mv /system/bin/thermal-engine-hh /system/bin/thermal-engine-hh_bck
+fi

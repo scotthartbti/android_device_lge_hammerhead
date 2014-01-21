@@ -127,6 +127,9 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 # Flags
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
+# Kernel handles input boosting
+TARGET_POWERHAL_NO_TOUCH_BOOST := true
+
 -include vendor/lge/hammerhead/BoardConfigVendor.mk
 
 #TWRP

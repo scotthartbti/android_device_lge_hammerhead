@@ -128,6 +128,9 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 # Kernel handles input boosting
 TARGET_POWERHAL_NO_TOUCH_BOOST := true
 
+# Use build optimizations
+TARGET_USE_O_LEVEL_3 := true
+
 -include vendor/lge/hammerhead/BoardConfigVendor.mk
 
 #TWRP

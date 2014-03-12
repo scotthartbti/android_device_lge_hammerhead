@@ -28,6 +28,7 @@ PRODUCT_COPY_FILES += \
     device/lge/hammerhead/fstab.hammerhead:root/fstab.hammerhead \
     device/lge/hammerhead/modules/kcontrol_gpu_msm.ko:system/lib/modules/kcontrol_gpu_msm.ko \
     device/lge/hammerhead/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
+    device/lge/hammerhead/27_frandom:system/etc/init.d/27_frandom \
     device/lge/hammerhead/sbin/bsbootscript.sh:root/sbin/bsbootscript.sh \
     device/lge/hammerhead/ueventd.hammerhead.rc:root/ueventd.hammerhead.rc
 

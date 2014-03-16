@@ -9,3 +9,25 @@ ln /dev/frandom /dev/random
 chmod 644 /dev/random
 ln /dev/erandom /dev/urandom
 chmod 644 /dev/urandom
+
+#Enable Dynamic Fsync by default
+
+echo "1" > /sys/kernel/dyn_fsync/Dyn_fsync_active
+
+# Dirty Ratios can improve battery life.  Bigger numbers means the system will flush ram contents to disk less often which will essentially save battery. 
+
+# dirty_background_ratio default is 10 (background meaning screen is off usually)
+
+echo "20" > /proc/sys/vm/dirty_background_ratio
+
+# dirty_ratio default is 20.  
+
+echo "40" > /proc/sys/vm/dirty_ratio
+
+# Default for dirty_writeback_centisecs is 500
+
+echo "1000" > /proc/sys/vm/dirty_writeback_centisecs
+
+# Default for dirty_expire_centisecs is 200
+
+echo "500" > /proc/sys/vm/dirty_expire_centisecs

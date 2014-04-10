@@ -114,6 +114,7 @@ TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.7-13.04/bin/arm-linux-gnueabihf-
 BOARD_SEPOLICY_UNION := \
        device.te \
        app.te \
+       netd.te \
        file_contexts
 
 HAVE_ADRENO_SOURCE:= false

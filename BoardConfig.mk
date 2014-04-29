@@ -134,6 +134,9 @@ TARGET_POWERHAL_NO_TOUCH_BOOST := true
 # Use build optimizations
 TARGET_USE_O_LEVEL_3 := true
 
+# Hardware
+BOARD_HARDWARE_CLASS := device/lge/hammerhead/cmhw
+
 -include vendor/lge/hammerhead/BoardConfigVendor.mk
 
 #TWRP

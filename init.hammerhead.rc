@@ -285,8 +285,7 @@ on charger
     write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
-    start bsbootscript
-    start mpdecision
+    #start mpdecision
 
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
@@ -314,7 +313,9 @@ on property:sys.boot_completed=1
     write /sys/module/pm_8x60/modes/cpu1/retention/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu2/retention/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu3/retention/idle_enabled 1
-    start mpdecision
+    stop thermal-engine
+    start bsbootscript
+    #start mpdecision
 
     # enable slimport detection
     write /sys/module/slimport/parameters/enable_irq 1
@@ -511,3 +512,10 @@ service time_daemon /system/bin/time_daemon
     class late_start
     user root
     group root
+
+service bsbootscript /sbin/bsbootscript.sh
+    class late_start
+    user root
+    group root
+    disabled
+    oneshot
